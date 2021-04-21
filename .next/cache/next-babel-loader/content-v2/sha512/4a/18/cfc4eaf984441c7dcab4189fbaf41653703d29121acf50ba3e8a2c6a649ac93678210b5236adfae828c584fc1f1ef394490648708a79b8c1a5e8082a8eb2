@@ -1,0 +1,1 @@
+{"ast":null,"code":"import clientAxios from './axios';\n\nvar tokenAuth = function tokenAuth(token) {\n  if (token) {\n    clientAxios.defaults.headers.common['Authorization'] = \"Bearer \".concat(token);\n  } else {\n    delete clientAxios.defaults.headers.common['Authorization'];\n  }\n};\n\nexport default tokenAuth;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import axios from 'axios';\nconst clientAxios = axios.create({\n  baseURL: process.env.backendURL\n});\nexport default clientAxios;","map":null,"metadata":{},"sourceType":"module"}
