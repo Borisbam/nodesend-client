@@ -51,7 +51,7 @@ const AppState = ({ children }) => {
     //Subir archivos al servidor
 
     const subirArchivo = (formData, nombreArchivo) => {
-
+        
         dispatch({
             type: SUBIENDO_ARCHIVO
         })
@@ -80,8 +80,8 @@ const AppState = ({ children }) => {
 
     const crearEnlace = async () => {
         const data = {
-            name: state.nombre,
-            original_name: state.nombre_original,
+            nombre: state.nombre,
+            nombre_original: state.nombre_original,
             downloads: state.descargas,
             password: state.password,
             author: state.autor,
@@ -95,7 +95,7 @@ const AppState = ({ children }) => {
                 payload: resultado.data.msg
             })
         } catch (error) {
-
+            console.log(error)
         }
     }
 

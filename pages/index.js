@@ -1,15 +1,17 @@
 import React, { useContext, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Alerta from '../components/Alerta';
-import authContext from '../context/auth/authContext';
+import AuthContext from '../context/auth/authContext';
 import appContext from '../context/app/appContext';
 import Link from 'next/link';
 import Dropzone from '../components/Dropzone';
 
 const Index = () => {
+
+  
   // Context Auth
-  const AuthContext = useContext(authContext);
-  const { autenticado, usuarioAutenticado } = AuthContext;
+  const authContext = useContext(AuthContext)
+  const { autenticado, usuarioAutenticado } = authContext;
 
   // Context App
   const AppContext = useContext(appContext);
@@ -19,6 +21,7 @@ const Index = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
+    
     if (token) {
       usuarioAutenticado();
     }

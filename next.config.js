@@ -1,6 +1,6 @@
 module.exports = {
     env: {
-        backendURL: 'localhost:4000',
-        frontendURL: 'localhost:3000'
+        backendURL: 'https://borisbam-nodesend-server.herokuapp.com/',
+        frontendURL: 'https://nodesend-client-jegkegfj7-borisbam.vercel.app/'
     }
 }

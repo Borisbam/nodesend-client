@@ -26,7 +26,7 @@ const Dropzone = () => {
     const [imagen, setImagen] = useState();
 
     const onDropRejected = () => {
-        mostrarAlerta('El límite es de 1MB, crea una cuenta');
+        mostrarAlerta('El límite es de 5MB, crea una cuenta');
     }
 
     const onDropAccepted = useCallback(async (acceptedFiles) => {
@@ -44,7 +44,7 @@ const Dropzone = () => {
     
     // Extraer contenido de dropzone
 
-    const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ onDropAccepted, onDropRejected, maxSize: 111111111 });
+    const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ onDropAccepted, onDropRejected, maxSize: 5000000 });
 
     const archivos = acceptedFiles.map(file => (
         <li
