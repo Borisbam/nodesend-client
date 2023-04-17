@@ -1,5 +1,6 @@
 module.exports = {
     env: {
-        backendURL: process.env.backendURL
+        backendURL: process.env.backendURL,
+        frontendURL: process.env.frontendURL
     }
 }

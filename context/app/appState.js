@@ -87,7 +87,6 @@ const AppState = ({ children }) => {
             author: state.autor,
             image: state.image
         }
-
         try {
             const resultado = await clientAxios.post('/api/links', data);
             dispatch({

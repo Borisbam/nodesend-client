@@ -30,15 +30,13 @@ const Dropzone = () => {
     }
 
     const onDropAccepted = useCallback(async (acceptedFiles) => {
-
-        
-          
-        setImagen(URL.createObjectURL(acceptedFiles[0]));
-        const image = [URL.createObjectURL(acceptedFiles[0])];
-        // Crea un form-data
         const formData = new FormData();
+        const image = [URL.createObjectURL(acceptedFiles[0])];
+        if(acceptedFiles[0].type.split('/')[0] == 'image') {
+            formData.append('image', image[0]);
+        }
+        setImagen(URL.createObjectURL(acceptedFiles[0]));
         formData.append('file', acceptedFiles[0]);
-        formData.append('image', image[0]);
         subirArchivo(formData, acceptedFiles[0].path);
     }, []);
     
@@ -50,7 +48,7 @@ const Dropzone = () => {
         <li
             className='bg-white flex-1 p-3 mb-4 shadow-lg rounded'
             key={file.lastModified}>
-            <img src={imagen} />
+            { file.type.split('/')[0] == 'image' ? <img src={imagen} /> : null }
             <p className='font-bold text-xl break-all'>{file.path}</p>
             <p className='text-xl text-gray-500 mt-2'>{(file.size / Math.pow(1024, 2)).toFixed(2)} MB</p>
         </li>

@@ -1,1 +1,0 @@
-{"ast":null,"code":"export var USUARIO_AUTENTICADO = 'USUARIO_AUTENTICADO';","map":{"version":3,"sources":["C:/Users/Boris/Desktop/React/NodeSend/client/types/index.js"],"names":["USUARIO_AUTENTICADO"],"mappings":"AAAA,OAAO,IAAMA,mBAAmB,GAAG,qBAA5B","sourcesContent":["export const USUARIO_AUTENTICADO = 'USUARIO_AUTENTICADO';"]},"metadata":{},"sourceType":"module"}
