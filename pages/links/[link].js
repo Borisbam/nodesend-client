@@ -34,7 +34,6 @@ export async function getServerSidePaths() {
 
 
 const Link = ({ link }) => {
-    
     const AppContext = useContext(appContext);
     const { mensaje_archivo, mostrarAlerta } = AppContext;
 
@@ -44,10 +43,7 @@ const Link = ({ link }) => {
     const [tienePassword, setTienePassword] = useState(link.password);
     const [password, setPassword] = useState('');
     const [fileLink, setFileLink] = useState(link.file);
-    const [ file, setFile] = useState({
-        original_name: '',
-        image: ''
-    })
+    const [ file, setFile] = useState()
     const verificarPassword = async e => {
         e.preventDefault();
 

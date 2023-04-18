@@ -31,9 +31,16 @@ const Dropzone = () => {
 
     const onDropAccepted = useCallback(async (acceptedFiles) => {
         const formData = new FormData();
-        const image = [URL.createObjectURL(acceptedFiles[0])];
         if(acceptedFiles[0].type.split('/')[0] == 'image') {
-            formData.append('image', image[0]);
+            function blobToBase64(blob) {
+                return new Promise((resolve, _) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.readAsDataURL(blob);
+                });
+            }
+            const img = await blobToBase64(acceptedFiles[0])
+            formData.append('image', img);
         }
         setImagen(URL.createObjectURL(acceptedFiles[0]));
         formData.append('file', acceptedFiles[0]);
